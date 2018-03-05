@@ -66,7 +66,7 @@ public class VendingMachineTest {
 	@Test(expected = Exception.class)
 	public void testRemoveItem_slot_empty() {
 		VM.removeItem("A");
-		thrown.expect(Exception.class);
+		thrown.expect(Exception.class); 
 	
 	}
 
@@ -86,7 +86,8 @@ public class VendingMachineTest {
 	 */
 	@Test (expected = Exception.class)
 	public void testInsertMoney_negative() {
-		VM.insertMoney(-1.0);
+		VM.insertMoney(-1);
+		fail();
 	}
 
 	/*
