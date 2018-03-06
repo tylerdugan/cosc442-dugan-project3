@@ -1,4 +1,4 @@
-package cosc442.spring2018.project3;
+package cosc442.spring2018.project3_2;
 
 
 /**
@@ -74,11 +74,11 @@ public class VendingMachine {
 	private int getSlotIndex(String code) throws VendingMachineException {
 		if( code.equals(A_CODE)) {
 			return 0;
-		} else if ( code.equals(B_CODE)) { 
+		} else if ( code.equals(B_CODE)) {
 			return 1;
 		} else if ( code.equals(C_CODE)) {
 			return 2;
-		} else if ( code.equals(D_CODE)) { 
+		} else if ( code.equals(D_CODE)) {
 			return 3;
 		} else {
 			throw new VendingMachineException(VendingMachine.INVALID_CODE_MESSAGE);

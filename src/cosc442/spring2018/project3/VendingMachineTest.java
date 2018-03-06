@@ -35,7 +35,7 @@ public class VendingMachineTest {
 		 VM.addItem(vmi, "A");
 		 assertEquals(vmi, VM.getItem("A")); // VendingMachine.getItem() returns the object, not item string
 	}
-	
+		
 	/*
 	 * 2 Inputs - Fill slot A/index 0 with item. Attempt to add another unique object to the same slot
 	 * Expected result = thrown exception 
@@ -118,7 +118,7 @@ public class VendingMachineTest {
 	 */
 	@Test 
 	public void testMakePurchase_slotEmpty_posBalance() {
-		assertFalse(VM.makePurchase("A"));
+		assertFalse(VM.makePurchase("A")); 
 	}
 	
 	/*
