@@ -13,7 +13,7 @@ public class VendingMachineTest {
 	public static VendingMachine VM;
 
 	@Rule 
-	public ExpectedException thrown= ExpectedException.none();
+	public ExpectedException thrown= ExpectedException.none(); 
 	
 	@Before
 	public void setUp() throws Exception {
@@ -30,7 +30,7 @@ public class VendingMachineTest {
 	 * Assuming empty slot = successful add item
 	 */
 	@Test
-	public void testAddItem_slot_empty() {
+	public void testAddItem_slot_empty() { 
 		 VendingMachineItem vmi = new VendingMachineItem("Chips", 1);
 		 VM.addItem(vmi, "A");
 		 assertEquals(vmi, VM.getItem("A")); // VendingMachine.getItem() returns the object, not item string
@@ -45,7 +45,7 @@ public class VendingMachineTest {
 		VendingMachineItem vmi = new VendingMachineItem("Chips", 1);
 		VendingMachineItem vmi2 = new VendingMachineItem("Cookies", 1);
 		VM.addItem(vmi, "A"); VM.addItem(vmi2, "A");
-		assertNotEquals(vmi2, VM.getItem("A"));
+		assertNotEquals(vmi2, VM.getItem("A"));  
 	}
 
 	/*
@@ -55,8 +55,20 @@ public class VendingMachineTest {
 	@Test
 	public void testRemoveItem_slot_full() {
 		VendingMachineItem vmi = new VendingMachineItem("Chips", 1); 
-		VM.addItem(vmi, "A"); VM.removeItem("A");
+		VM.addItem(vmi, "A"); 
+		VM.removeItem("A");
 		assertNotSame(vmi, VM.getItem("A"));
+	}
+	
+	/*
+	 * Add item to slot A, remove item, compare object in slot to initial item created 
+	 * Expected outcome = empty slot, objects not the same 
+	 */
+	@Test
+	public VendingMachineItem testReturnVendingMachineItem() {
+		VendingMachineItem vmi = new VendingMachineItem("Chips", 1); 
+		VM.addItem(vmi, "A"); 
+		return VM.getItem("A");
 	}
 	
 	/*

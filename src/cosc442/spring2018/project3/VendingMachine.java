@@ -79,7 +79,7 @@ public class VendingMachine {
 		} else if ( code.equals(C_CODE)) {
 			return 2;
 		} else if ( code.equals(D_CODE)) { 
-			return 3;
+			return 3; 
 		} else {
 			throw new VendingMachineException(VendingMachine.INVALID_CODE_MESSAGE);
 		}

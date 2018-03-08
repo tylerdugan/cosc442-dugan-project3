@@ -10,7 +10,7 @@ import static org.junit.Assert.*;
  * @author tyler
  * @version $Revision: 1.0 $
  */
-public class VendingMachineTest {
+public class VendingMachineTest { 
 	/**
 	 * Run the VendingMachine() constructor test.
 	 *
@@ -25,7 +25,7 @@ public class VendingMachineTest {
 		VendingMachine result = new VendingMachine();
 
 		// add additional test code here
-		assertNotNull(result);
+		assertNotNull(result);  
 		assertEquals(0.0, result.getBalance(), 1.0);
 		assertEquals(0.0, result.returnChange(), 1.0);
 	}
@@ -47,6 +47,8 @@ public class VendingMachineTest {
 		assertNotNull(result);
 		assertEquals(0.0, result.getBalance(), 1.0);
 		assertEquals(0.0, result.returnChange(), 1.0);
+		
+		
 	}
 
 	/**
@@ -64,7 +66,15 @@ public class VendingMachineTest {
 		VendingMachineItem item = new VendingMachineItem("", 1.0);
 		String code = "A";
 
-		fixture.addItem(item, code);
+		fixture.addItem(item, code); 
+		
+		
+		VendingMachine fixture2 = new VendingMachine();
+		fixture2.balance = 1.0;
+		VendingMachineItem item2 = new VendingMachineItem("", 1.0);
+		String code2 = "A";
+
+		fixture.addItem(item2, code2);  
 
 		// add additional test code here
 	}
@@ -80,9 +90,9 @@ public class VendingMachineTest {
 	public void testAddItem_2()
 		throws Exception {
 		VendingMachine fixture = new VendingMachine();
-		fixture.balance = 1.0;
-		VendingMachineItem item = new VendingMachineItem("", 1.0);
-		String code = "A";
+		fixture.balance = 2.0;
+		VendingMachineItem item = new VendingMachineItem("", 2.0);
+		String code = "B"; 
 
 		fixture.addItem(item, code);
 
@@ -100,9 +110,30 @@ public class VendingMachineTest {
 	public void testAddItem_3()
 		throws Exception {
 		VendingMachine fixture = new VendingMachine();
-		fixture.balance = 1.0;
-		VendingMachineItem item = new VendingMachineItem("", 1.0);
-		String code = "";
+		fixture.balance = 3.0;
+		VendingMachineItem item = new VendingMachineItem("", 3.0);
+		String code = "C"; 
+
+		fixture.addItem(item, code);
+
+		// add additional test code here
+	}
+	
+
+	/**
+	 * Run the void addItem(VendingMachineItem,String) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 3/6/18 3:14 PM
+	 */
+	@Test(expected = cosc442.spring2018.project3_2.VendingMachineException.class)
+	public void testAddItem_4()
+		throws Exception {
+		VendingMachine fixture = new VendingMachine();
+		fixture.balance = 4.0;
+		VendingMachineItem item = new VendingMachineItem("", 4.0);
+		String code = "D"; 
 
 		fixture.addItem(item, code);
 

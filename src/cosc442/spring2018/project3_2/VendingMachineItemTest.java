@@ -11,7 +11,7 @@ import static org.junit.Assert.*;
  * @version $Revision: 1.0 $
  */
 public class VendingMachineItemTest {
-	/**
+	/** 
 	 * Run the VendingMachineItem(String,double) constructor test.
 	 *
 	 * @throws Exception

@@ -76,7 +76,7 @@ public class VendingMachine {
 			return 0;
 		} else if ( code.equals(B_CODE)) {
 			return 1;
-		} else if ( code.equals(C_CODE)) {
+		} else if ( code.equals(C_CODE)) { 
 			return 2;
 		} else if ( code.equals(D_CODE)) {
 			return 3;
@@ -105,7 +105,7 @@ public class VendingMachine {
 			throw new VendingMachineException(SLOT_MESSAGE + code
 					+ ALREADY_OCCUPIED_MESSAGE);
 		} else {
-			itemArray[slotIndex] = item;
+			itemArray[slotIndex] = item; 
 		}
 	}
 
@@ -133,8 +133,9 @@ public class VendingMachine {
 		itemArray[slotIndex] = null;
 		if ( item == null) {
 			throw new VendingMachineException(SLOT_MESSAGE + code + IS_EMPTY_MESSAGE);
+		}else {
+		return item;  
 		}
-		return item;
 	}
 
 	/**
@@ -177,7 +178,7 @@ public class VendingMachine {
 			this.balance -= item.getPrice();
 			returnCode = true;
 		}
-		return returnCode;
+		return returnCode; 
 	}
 
 	/**
